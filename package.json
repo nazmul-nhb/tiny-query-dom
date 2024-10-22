@@ -1,0 +1,26 @@
+{
+	"name": "tinyquery",
+	"version": "0.5.0",
+	"main": "dist/tinyquery.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "rollup -c",
+		"test": "jest"
+	},
+  "keywords": ["dom", "javascript", "tinyquery", "library"],
+  "author": {
+    "name": "Nazmul Hassan",
+    "email": "nazmulnhb@gmail.com"
+  },
+  "license": "MIT",
+	"description": "TinyQuery - A lightweight and modern JavaScript library for minimal DOM manipulation and event handling, inspired by jQuery.",
+	"devDependencies": {
+		"@rollup/plugin-node-resolve": "^15.3.0",
+		"@rollup/plugin-typescript": "^12.1.1",
+		"@types/jest": "^29.5.13",
+		"jest": "^29.7.0",
+		"rollup": "^4.24.0",
+		"ts-jest": "^29.2.5",
+		"typescript": "^5.6.3"
+	}
+}
