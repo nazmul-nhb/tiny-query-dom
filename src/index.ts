@@ -1,0 +1,3 @@
+import { $ } from "./TinyQuery";
+
+export { $ };
