@@ -1,6 +1,6 @@
 {
 	"name": "tiny-query-dom",
-	"version": "0.6.2",
+	"version": "0.6.6",
 	"type": "module",
 	"main": "dist/tinyquery.js",
 	"types": "dist/index.d.ts",

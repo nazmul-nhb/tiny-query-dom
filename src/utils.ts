@@ -2,7 +2,11 @@ export const forEachElement = (
 	elements: HTMLElement[],
 	callback: (el: HTMLElement) => void
 ): void => {
-	elements.forEach(callback);
+	elements.forEach((el) => {
+		if (el) {
+			callback(el);
+		}
+	});
 };
 
 export const setStyles = (

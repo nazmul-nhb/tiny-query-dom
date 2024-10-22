@@ -137,27 +137,25 @@ class TinyQuery implements TinyQueryInterface {
 	}
 
 	addClass(className: string): this {
-		addClass(this.elements, className); // Add class
+		addClass(this.elements, className); // Call the imported addClass
 		return this; // Return this for chaining
 	}
 
 	removeClass(className: string): this {
-		removeClass(this.elements, className); // Remove class
+		removeClass(this.elements, className); // Call the imported removeClass
 		return this; // Return this for chaining
 	}
 
 	toggleClass(className: string): this {
-		toggleClass(this.elements, className); // Toggle class
+		toggleClass(this.elements, className); // Call the imported toggleClass
 		return this; // Return this for chaining
 	}
 
-	// Get or set attributes
 	attr(attribute: string, value?: string): this | string | null {
 		if (value === undefined) {
-			const result = attr(this.elements, attribute); // Call the imported attr function
-			return result; // No need to check for undefined since dom.ts returns null now
+			return attr(this.elements, attribute); // Call the imported attr to get
 		} else {
-			attr(this.elements, attribute, value); // Set the attribute
+			attr(this.elements, attribute, value); // Call the imported attr to set
 			return this; // Return this for chaining
 		}
 	}

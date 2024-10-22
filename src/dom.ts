@@ -137,7 +137,6 @@ export const toggleClass = (
 };
 
 // Get or set attributes
-// Get or set attributes
 export const attr = (
 	elements: HTMLElement[],
 	attribute: string,

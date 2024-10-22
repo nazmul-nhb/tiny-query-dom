@@ -17,12 +17,15 @@ export default {
 
     // This array specifies the file extensions Jest will recognize.
     // It helps Jest to understand which file types to include when running tests.
-    moduleFileExtensions: [
-        'ts',   // TypeScript files
-        'js',   // JavaScript files
-        'json', // JSON files
-        'node', // Node.js files
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'], // Supported file extensions
+    testMatch: ['**/?(*.)+(spec|test).[tj]s?(x)'], // Pattern for test files
+    coverageDirectory: 'coverage', // Output directory for coverage reports
+    collectCoverageFrom: [
+        'src/**/*.{ts,tsx}', // Collect coverage from all TypeScript files
+        '!src/index.ts', // Exclude main entry file if necessary
     ],
+    // setupFilesAfterEnv: ['<rootDir>/setupTests.ts'], // File to run before tests
+
     moduleNameMapper: {
         // Redirect imports from "tinyquery" to the built version
         '^tinyquery$': '<rootDir>/dist/tinyquery.js',
