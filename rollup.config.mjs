@@ -7,7 +7,7 @@ export default {
     input: 'src/index.ts', // The entry point for the bundle; this is where Rollup starts bundling
     output: {
         file: 'dist/tinyquery.js', // The output file where the bundled code will be saved
-        format: 'iife', // The format of the output bundle; 'iife' is used for immediately-invoked function expressions suitable for inclusion in a script tag
+        format: 'umd', // The format of the output bundle; 'iife' is used for immediately-invoked function expressions suitable for inclusion in a script tag
         name: 'TinyQuery', // The name of the global variable to use in the IIFE format; this will expose your library as a global variable
         sourcemap: true, // Enable source maps for easier debugging
     },

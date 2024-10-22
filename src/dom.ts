@@ -81,22 +81,33 @@ export const toggle = (elements: HTMLElement[]): void => {
 
 // Set CSS styles (single or multiple)
 export const css = (
-	elements: HTMLElement[],
-	property: string | Record<string, string>,
-	value?: string
+    elements: HTMLElement[],
+    property: string | Record<string, string>,
+    value?: string
 ): void => {
-	forEachElement(elements, (el) => {
-		if (typeof property === "string" && value !== undefined) {
-			// Ensure property is a valid CSS property
-			(el.style as any)[property] = value; // Set single CSS property
-		} else if (typeof property === "object") {
-			// Set multiple CSS properties
-			for (const key in property) {
-				(el.style as any)[key] = property[key];
-			}
-		}
-	});
+    forEachElement(elements, (el) => {
+        if (typeof property === "string" && value !== undefined) {
+            // Ensure property is a valid CSS property
+            (el.style as any)[property] = value; // Set single CSS property
+        } else if (typeof property === "object") {
+            // Set multiple CSS properties
+            for (const key in property) {
+                (el.style as any)[key] = property[key];
+            }
+        }
+    });
 };
+
+// Get a CSS property
+export const getCss = (
+	elements: HTMLElement[],
+	property: string
+): string | undefined => {
+	const el = elements[0];
+	return el ? getComputedStyle(el).getPropertyValue(property) : undefined; // Get computed style
+};
+
+
 
 // Add a class to elements
 export const addClass = (elements: HTMLElement[], className: string): void => {

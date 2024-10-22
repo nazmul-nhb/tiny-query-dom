@@ -23,4 +23,12 @@ export default {
         'json', // JSON files
         'node', // Node.js files
     ],
+    moduleNameMapper: {
+        // Redirect imports from "tinyquery" to the built version
+        '^tinyquery$': '<rootDir>/dist/tinyquery.js',
+    },
+    moduleDirectories: [
+        'node_modules',
+        'src', // This allows Jest to resolve modules in the src directory
+    ],
 };

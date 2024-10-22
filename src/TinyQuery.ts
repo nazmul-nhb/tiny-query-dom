@@ -19,6 +19,7 @@ import {
 	removeAttr,
 	serialize,
 	each,
+	getCss,
 } from "./dom";
 
 class TinyQuery implements TinyQueryInterface {
@@ -113,15 +114,26 @@ class TinyQuery implements TinyQueryInterface {
 	}
 
 	// CSS manipulation
-	css(property: string | Record<string, string>, value?: string): this {
+	css(property: string, value: string): this; // Method overload for setting a property
+	css(properties: Record<string, string>): this; // Method overload for setting multiple properties
+	css(property: string): string | undefined; // Method overload for getting a property
+	css(
+		property: string | Record<string, string>,
+		value?: string
+	): this | string | undefined {
 		if (typeof property === "string" && value !== undefined) {
 			// Set single CSS property
 			css(this.elements, property, value);
+			return this; // Return this for chaining
 		} else if (typeof property === "object") {
 			// Set multiple CSS properties
-			css(this.elements, property); // Pass the object directly
+			css(this.elements, property);
+			return this; // Return this for chaining
+		} else if (typeof property === "string") {
+			// If it's a string and no value is provided, we assume it's a getter.
+			return getCss(this.elements, property); // Return the value of the CSS property
 		}
-		return this; // Return this for chaining
+		return this; // Fallback return
 	}
 
 	addClass(className: string): this {
