@@ -1,6 +1,6 @@
 {
 	"name": "tiny-query-dom",
-	"version": "0.6.1",
+	"version": "0.6.2",
 	"type": "module",
 	"main": "dist/tinyquery.js",
 	"types": "dist/index.d.ts",
@@ -41,7 +41,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/nazmul-nhb/tinyquery.git"
+		"url": "git+https://github.com/nazmul-nhb/tiny-query-dom.git"
 	},
 	"publishConfig": {
 		"access": "public"
