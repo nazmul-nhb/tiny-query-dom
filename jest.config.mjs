@@ -20,6 +20,7 @@ export default {
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'], // Supported file extensions
     testMatch: ['**/?(*.)+(spec|test).[tj]s?(x)'], // Pattern for test files
     coverageDirectory: 'coverage', // Output directory for coverage reports
+    collectCoverage: true,
     collectCoverageFrom: [
         'src/**/*.{ts,tsx}', // Collect coverage from all TypeScript files
         '!src/index.ts', // Exclude main entry file if necessary

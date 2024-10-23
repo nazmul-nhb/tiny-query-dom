@@ -1,7 +1,7 @@
 import { $ as built$ } from "../dist/tinyquery"; // Built version
 import { $ } from "../src/TinyQuery"; // Dev version
 
-describe("TinyQuery Text Manipulation", () => {
+describe("TinyQuery DOM Manipulation", () => {
 	// Set up the DOM before each test
 	beforeEach(() => {
 		document.body.innerHTML = '<div id="test">Hello</div>';
@@ -71,16 +71,20 @@ describe("TinyQuery Text Manipulation", () => {
 
 		test("Remove class", () => {
 			const el = $(`#test`).addClass("new-class");
+			console.log("Before removing class:", el.attr("class"));
 			el.removeClass("new-class");
-			expect(el.attr("class")).not.toContain("new-class"); // Check if class was removed
+			console.log("After removing class:", el.attr("class"));
+			expect(el.attr("class")).toBe(null); // Check if class was removed completely
 		});
 
 		test("Toggle class", () => {
 			const el = $(`#test`);
 			el.toggleClass("toggle-class");
+			console.log("After adding class:", el.attr("class"));
 			expect(el.attr("class")).toContain("toggle-class"); // Check if class was added
 			el.toggleClass("toggle-class");
-			expect(el.attr("class")).not.toContain("toggle-class"); // Check if class was removed
+			console.log("After removing class:", el.attr("class"));
+			expect(el.attr("class")).toBe(null); // Check if class was removed completely
 		});
 
 		test("Set multiple CSS properties", () => {

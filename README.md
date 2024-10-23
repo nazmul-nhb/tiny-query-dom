@@ -9,11 +9,13 @@ npm install tinyquery
 ```
 
 ```javascript
-    import { $ } from 'tinyquery';
-
-    $('#elementId').text('New Text').css('color', 'blue').on('click', () => {
+import { $ } from 'tinyquery';
+$('#elementId')
+    .text('New Text')
+    .css('color', 'blue')
+    .on('click', () => {
         alert('Element clicked!');
-    });
+});
 
 ```
 

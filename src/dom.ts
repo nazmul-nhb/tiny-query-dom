@@ -118,22 +118,30 @@ export const addClass = (elements: HTMLElement[], className: string): void => {
 
 // Remove a class from elements
 export const removeClass = (
-	elements: HTMLElement[],
-	className: string
+    elements: HTMLElement[],
+    className: string
 ): void => {
-	forEachElement(elements, (el) => {
-		el.classList.remove(className);
-	});
+    forEachElement(elements, (el) => {
+        el.classList.remove(className);
+        // Remove 'class' attribute if classList is empty
+        if (el.classList.length === 0) {
+            el.removeAttribute('class');
+        }
+    });
 };
 
 // Toggle a class on elements
 export const toggleClass = (
-	elements: HTMLElement[],
-	className: string
+    elements: HTMLElement[],
+    className: string
 ): void => {
-	forEachElement(elements, (el) => {
-		el.classList.toggle(className);
-	});
+    forEachElement(elements, (el) => {
+        el.classList.toggle(className);
+        // Remove 'class' attribute if classList is empty
+        if (el.classList.length === 0) {
+            el.removeAttribute('class');
+        }
+    });
 };
 
 // Get or set attributes
