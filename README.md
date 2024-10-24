@@ -5,16 +5,17 @@ A lightweight and modern JavaScript library for DOM manipulation and event handl
 ## Installation
 
 ```bash
-npm install tinyquery
+npm install tiny-query-dom
 ```
 
 ```javascript
-import { $ } from 'tinyquery';
+import { $ } from 'tiny-query-dom';
+
 $('#elementId')
     .text('New Text')
     .css('color', 'blue')
     .on('click', () => {
-        alert('Element clicked!');
+        alert('Element Clicked!');
 });
 
 ```
