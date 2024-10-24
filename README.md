@@ -9,7 +9,7 @@ npm install tiny-query-dom
 ```
 
 ```javascript
-import { $ } from 'tinyquery';
+import { $ } from 'tiny-query-dom';
 
 $('#elementId')
     .text('New Text')

@@ -1,6 +1,6 @@
 {
 	"name": "tiny-query-dom",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"main": "dist/tinyquery.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
@@ -13,7 +13,8 @@
 		"dom",
 		"javascript",
 		"tinyquery",
-		"library"
+		"library",
+		"dom-manipulation"
 	],
 	"author": {
 		"name": "Nazmul Hassan",
