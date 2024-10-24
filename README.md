@@ -11,11 +11,11 @@ npm install tiny-query-dom
 ```javascript
 import { $ } from 'tiny-query-dom';
 
-$('#elementId')
-    .text('New Text')
-    .css('color', 'blue')
-    .on('click', () => {
-        alert('Element Clicked!');
+$("#test").on("click", () => {
+    $("#subject")
+        .toggle()
+        .css({ color: "red", font: "32px bold" })
+        .text("No Subject!");
 });
 
 ```
